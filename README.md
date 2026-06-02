@@ -3,9 +3,11 @@ R scripts for filtering gene counts and running differential expression analysis
 # ==============================================================================
 # 1. SIMULACIÓN OPTIMIZADA DE CONTEOS DE RNA-SEQ (POSTCOSECHA DE ROSAS)
 # ==============================================================================
+```r
 set.seed(123)
-
+```
 # Ampliamos la lista de genes para incluir controles internos y genes con ruido
+```r
 genes_rosa <- c(
   "Rhy_001254_Aquaporina_Hidratacion",
   "Rhy_003421_Receptor_Etileno_RhETR1",
@@ -34,10 +36,11 @@ metadatos_simulados <- data.frame(
   estado = factor(c("Boton", "Boton", "Boton", "Florero", "Florero", "Florero")),
   row.names = colnames(matriz_simulada)
 )
-
+```
 # ==============================================================================
 # 2. PIPELINE DE DESEQ2 Y VOLCANO PLOT CORREGIDO
 # ==============================================================================
+```r
 library(DESeq2)
 library(ggplot2)
 
@@ -67,7 +70,7 @@ ggplot(df_resultados, aes(x = log2FoldChange, y = -log10(pvalue))) +
        color = "Filtro de Expresión") +
   theme(legend.position = "bottom",
         plot.title = element_text(face = "bold", size = 14))
-
+```
 # Bloque de Degradación e Inanición (Cuadrante Superior Derecho / Izquierdo):
 Los genes como Aquaporina y Antocianina muestran un desplome masivo ($-\log_{10}(p\text{-value}) > 50$), confirmando molecularmente que el pétalo apaga su maquinaria de hidratación y color. Del mismo modo, el receptor de Etileno (RhETR1) y la Poligalacturonasa se disparan de forma estadísticamente ultra-significativa, marcando el inicio irreversible de la senescencia y el ablandamiento de la pared celular del pétalo.
 
