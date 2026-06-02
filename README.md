@@ -71,6 +71,9 @@ ggplot(df_resultados, aes(x = log2FoldChange, y = -log10(pvalue))) +
   theme(legend.position = "bottom",
         plot.title = element_text(face = "bold", size = 14))
 ```
+<img width="811" height="511" alt="heatmap" src="https://github.com/user-attachments/assets/08362f57-f0a5-4528-a0af-230897012499" />
+<img width="1000" height="625" alt="volcanoplot" src="https://github.com/user-attachments/assets/c7c4488e-817a-4293-ba0f-834dfd4c0cfc" />
+
 # Bloque de Degradación e Inanición (Cuadrante Superior Derecho / Izquierdo):
 Los genes como Aquaporina y Antocianina muestran un desplome masivo ($-\log_{10}(p\text{-value}) > 50$), confirmando molecularmente que el pétalo apaga su maquinaria de hidratación y color. Del mismo modo, el receptor de Etileno (RhETR1) y la Poligalacturonasa se disparan de forma estadísticamente ultra-significativa, marcando el inicio irreversible de la senescencia y el ablandamiento de la pared celular del pétalo.
 
